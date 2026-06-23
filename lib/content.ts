@@ -20,6 +20,16 @@ export const profile = {
     "that hold up in production. I enjoy learning from experienced engineers and growing with every project.",
 };
 
+/** Object rendered as the syntax-highlighted hero code snippet. */
+export const code = {
+  role: "Backend Developer",
+  location: "Lagos, Nigeria",
+  experience: "~3 years",
+  stack: ["Node.js", "Python", "C#"],
+  focus: ["APIs", "databases", "clean code"],
+  status: "open to backend roles",
+};
+
 export type SkillGroup = { label: string; items: string[] };
 
 export const skills: SkillGroup[] = [

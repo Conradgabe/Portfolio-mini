@@ -2,46 +2,25 @@
 
 @theme inline {
   --color-white: #ffffff;
-  --color-bg: #ffffff;
-  --color-soft: #f5f7f9;
-  --color-panel: #ffffff;
-  --color-ink: #1f2733;
-  --color-navy: #1d3557;
-  --color-navy-2: #2a4a6b;
-  --color-muted: #5b6776;
-  --color-line: #e4e8ec;
-  --color-line-strong: #cfd6dd;
+  --color-bg: #0d1117;
+  --color-panel: #161b22;
+  --color-panel-2: #1c2128;
+  --color-line: #30363d;
+  --color-line-soft: #21262d;
+  --color-text: #e6edf3;
+  --color-muted: #8b949e;
+  --color-faint: #6e7681;
+
+  /* accents + syntax colors */
+  --color-accent: #58a6ff;
+  --color-kw: #ff7b72;
+  --color-key: #79c0ff;
+  --color-str: #7ee787;
+  --color-num: #ffa657;
+  --color-purple: #d2a8ff;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
-}
-
-* {
-  border-color: var(--color-line);
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
-}
-
-body {
-  background: var(--color-bg);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-::selection {
-  background: var(--color-navy);
-  color: #ffffff;
 }
 
 @layer base {
@@ -51,9 +30,37 @@ body {
   }
 }
 
-/* Focus visibility for keyboard users */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  /* faint technical grid */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: rgba(88, 166, 255, 0.3);
+  color: #ffffff;
+}
+
 :focus-visible {
-  outline: 2px solid var(--color-navy);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: 2px;
 }

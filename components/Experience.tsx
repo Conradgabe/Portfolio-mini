@@ -3,21 +3,21 @@ import { experience } from "@/lib/content";
 
 export function Experience() {
   return (
-    <Section id="experience" title="Experience">
-      <div className="space-y-9">
+    <Section id="experience" title="experience">
+      <div className="space-y-8">
         {experience.map((job) => (
-          <article key={`${job.company}-${job.period}`}>
+          <article key={`${job.company}-${job.period}`} className="border-l border-line pl-5">
             <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 className="text-[15px] font-semibold text-ink">
-                {job.role} <span className="text-navy">· {job.company}</span>
+              <h3 className="text-[15px] font-semibold text-text">
+                {job.role} <span className="text-accent">@ {job.company}</span>
               </h3>
-              <span className="font-mono text-xs text-muted">{job.period}</span>
+              <span className="font-mono text-xs text-faint">{job.period}</span>
             </div>
-            <p className="mt-0.5 text-sm text-muted">{job.location}</p>
+            <p className="mt-0.5 font-mono text-xs text-faint">{job.location}</p>
             <ul className="mt-3 space-y-1.5">
               {job.points.map((p, i) => (
                 <li key={i} className="flex gap-2.5 text-[14.5px] leading-relaxed text-muted">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-navy-2" />
+                  <span className="mt-0.5 font-mono text-accent">▹</span>
                   <span>{p}</span>
                 </li>
               ))}
